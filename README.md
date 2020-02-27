@@ -11,7 +11,6 @@ $ git clone git@github.com:hiroxto/gas-campaign-calendar.git
 $ cd gas-campaign-calendar
 $ yarn install
 $ cp .clasp.example.json .clasp.json
-$ npx clasp clone
 ```
 
 ## Publish

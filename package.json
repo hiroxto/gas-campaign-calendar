@@ -1,7 +1,6 @@
 {
   "name": "gas-campaign-calendar",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "hiroto.ktzw@gmail.com <Hiroto Kitazawa>",
   "license": "MIT",
   "private": true,

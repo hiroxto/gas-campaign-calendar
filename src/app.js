@@ -10,6 +10,7 @@ const SHEET_NAME = PropertiesService.getScriptProperties().getProperty('SHEET_NA
 /**
  * シートのデータをカレンダーに登録する
  */
+// eslint-disable-next-line no-unused-vars
 function addEventsToGoogleCalendar () {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
 

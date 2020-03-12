@@ -13,8 +13,7 @@ const SHEET_NAME = PropertiesService.getScriptProperties().getProperty('SHEET_NA
 /**
  * シートのデータをカレンダーに登録する
  */
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-function addEventsToGoogleCalendar (): void {
+export function addEventsToGoogleCalendar (): void {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
 
   for (let rowNumber = 2; rowNumber <= sheet.getLastRow(); rowNumber++) {
@@ -62,7 +61,7 @@ function addEventsToGoogleCalendar (): void {
  * @param target 対象店舗
  * @returns イベントのタイトル
  */
-function buildTitle (summary: string, target: string): string {
+export function buildTitle (summary: string, target: string): string {
   const trimSummary = summary.trim();
   const trimTarget = target.trim();
 
@@ -77,7 +76,7 @@ function buildTitle (summary: string, target: string): string {
  * @param reference 参照URL
  * @returns イベントの説明
  */
-function buildDescription (baseDescription: string, limit: string, reference: string): string {
+export function buildDescription (baseDescription: string, limit: string, reference: string): string {
   let description = baseDescription;
 
   if (limit !== '') {
@@ -98,7 +97,7 @@ function buildDescription (baseDescription: string, limit: string, reference: st
  * @param eventStartTime イベントが開始する時間
  * @returns イベントの開始日時
  */
-function getStartDateTime (startDate: string, eventStartTime: Date): Date {
+export function getStartDateTime (startDate: string, eventStartTime: Date): Date {
   const hours = eventStartTime.getHours();
   const minutes = eventStartTime.getMinutes();
   const seconds = eventStartTime.getSeconds();
@@ -112,7 +111,7 @@ function getStartDateTime (startDate: string, eventStartTime: Date): Date {
  * @param endDate イベントが終了する日付
  * @returns イベントの終了日時
  */
-function getAllDayEventEndDateTime (endDate: string): Date {
+export function getAllDayEventEndDateTime (endDate: string): Date {
   return new Date((new Date(endDate)).getTime() + (1000 * 60 * 60 * 24));
 }
 
@@ -123,7 +122,7 @@ function getAllDayEventEndDateTime (endDate: string): Date {
  * @param eventEndTime イベントが終了する時間
  * @returns イベントの終了日時
  */
-function getEndDateTime (endDate: string, eventEndTime: Date): Date {
+export function getEndDateTime (endDate: string, eventEndTime: Date): Date {
   const hours = eventEndTime.getHours();
   const minutes = eventEndTime.getMinutes();
   const seconds = eventEndTime.getSeconds();
@@ -141,7 +140,7 @@ function getEndDateTime (endDate: string, eventEndTime: Date): Date {
  * @param isAllDayEvent 終日イベントかどうか
  * @returns 作成されたイベント
  */
-function createNewCalendarEvent (title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
+export function createNewCalendarEvent (title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
   const calendar = CalendarApp.getCalendarById(CALENDAR_ID);
 
   if (isAllDayEvent) {
@@ -162,7 +161,7 @@ function createNewCalendarEvent (title: string, startDateTime: Date, endDateTime
  * @param isAllDayEvent 終日イベントかどうか
  * @returns 更新されたイベント
  */
-function updateCalendarEvent (id: string, title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
+export function updateCalendarEvent (id: string, title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
   const calendar = CalendarApp.getCalendarById(CALENDAR_ID);
   const event = calendar.getEventById(id);
 

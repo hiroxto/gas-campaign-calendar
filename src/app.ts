@@ -56,11 +56,11 @@ function addEventsToGoogleCalendar (): void {
 }
 
 /**
- * カレンダーのタイトルをビルドする.
+ * イベントのタイトルをビルドする.
  *
- * @param {string} summary
- * @param {string} target
- * @returns {string}
+ * @param summary キャンペーンの概要
+ * @param target 対象店舗
+ * @returns イベントのタイトル
  */
 function buildTitle (summary: string, target: string): string {
   const trimSummary = summary.trim();
@@ -70,12 +70,12 @@ function buildTitle (summary: string, target: string): string {
 }
 
 /**
- * カレンダーの説明をビルドする
+ * イベントの説明をビルドする
  *
- * @param {string} baseDescription 基本的な説明
- * @param {string} limit 還元上限の説明
- * @param {string} reference 参照のURL
- * @returns {string}
+ * @param baseDescription 基本的な説明
+ * @param limit 還元上限の説明
+ * @param reference 参照URL
+ * @returns イベントの説明
  */
 function buildDescription (baseDescription: string, limit: string, reference: string): string {
   let description = baseDescription;
@@ -94,9 +94,9 @@ function buildDescription (baseDescription: string, limit: string, reference: st
 /**
  * イベントが開始する日付と時間の Date オブジェクトを取得する
  *
- * @param {string} startDate イベントが開始する日付
- * @param {Date} eventStartTime イベントが開始する時間
- * @returns {Date}
+ * @param startDate イベントが開始する日付
+ * @param eventStartTime イベントが開始する時間
+ * @returns イベントの開始日時
  */
 function getStartDateTime (startDate: string, eventStartTime: Date): Date {
   const hours = eventStartTime.getHours();
@@ -109,8 +109,8 @@ function getStartDateTime (startDate: string, eventStartTime: Date): Date {
 /**
  * 終日イベントが終了する日付と時間の Date オブジェクトを取得する
  *
- * @param {string} endDate イベントが終了する日付
- * @returns {Date}
+ * @param endDate イベントが終了する日付
+ * @returns イベントの終了日時
  */
 function getAllDayEventEndDateTime (endDate: string): Date {
   return new Date((new Date(endDate)).getTime() + (1000 * 60 * 60 * 24));
@@ -119,9 +119,9 @@ function getAllDayEventEndDateTime (endDate: string): Date {
 /**
  * イベントが終了する日付と時間の Date オブジェクトを取得する
  *
- * @param {string} endDate イベントが終了する日付
- * @param {Date} eventEndTime イベントが終了する時間
- * @returns {Date}
+ * @param endDate イベントが終了する日付
+ * @param eventEndTime イベントが終了する時間
+ * @returns イベントの終了日時
  */
 function getEndDateTime (endDate: string, eventEndTime: Date): Date {
   const hours = eventEndTime.getHours();
@@ -132,14 +132,14 @@ function getEndDateTime (endDate: string, eventEndTime: Date): Date {
 }
 
 /**
- * カレンダーを新規作成する
+ * イベントを新規作成する
  *
- * @param {string} title
- * @param {Date} startDateTime
- * @param {Date} endDateTime
- * @param {string} description
- * @param {boolean} isAllDayEvent
- * @returns {CalendarApp.CalendarEvent}
+ * @param title イベントのタイトル
+ * @param startDateTime イベントの開始日時
+ * @param endDateTime イベントの終了日時
+ * @param description イベントの説明
+ * @param isAllDayEvent 終日イベントかどうか
+ * @returns 作成されたイベント
  */
 function createNewCalendarEvent (title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
   const calendar = CalendarApp.getCalendarById(CALENDAR_ID);
@@ -152,15 +152,15 @@ function createNewCalendarEvent (title: string, startDateTime: Date, endDateTime
 }
 
 /**
- * 既存のカレンダーを更新する
+ * 既存のイベントを更新する
  *
- * @param {string} id
- * @param {string} title
- * @param {Date} startDateTime
- * @param {Date} endDateTime
- * @param {string} description
- * @param {boolean} isAllDayEvent
- * @returns {CalendarApp.CalendarEvent}
+ * @param id イベントのID
+ * @param title イベントのタイトル
+ * @param startDateTime イベントの開始日時
+ * @param endDateTime イベントの終了日時
+ * @param description イベントの説明
+ * @param isAllDayEvent 終日イベントかどうか
+ * @returns 更新されたイベント
  */
 function updateCalendarEvent (id: string, title: string, startDateTime: Date, endDateTime: Date, description: string, isAllDayEvent: boolean): CalendarEvent {
   const calendar = CalendarApp.getCalendarById(CALENDAR_ID);

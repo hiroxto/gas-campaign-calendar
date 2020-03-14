@@ -15,7 +15,8 @@
   "pin": {
     "enabled": true,
     "schedule": [
-      "every weekday"
+      "every weekday",
+      "every weekend"
     ]
   },
   "patch": {

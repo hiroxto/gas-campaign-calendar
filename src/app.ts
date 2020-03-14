@@ -1,14 +1,16 @@
 // eslint-disable-next-line no-undef
 import CalendarEvent = GoogleAppsScript.Calendar.CalendarEvent;
 
+const properties = PropertiesService.getScriptProperties();
+
 // 実行する status の値
-const EXECUTE_STATUS_VALUE = PropertiesService.getScriptProperties().getProperty('EXECUTE_STATUS_VALUE');
+const EXECUTE_STATUS_VALUE = properties.getProperty('EXECUTE_STATUS_VALUE');
 // 実行完了後にセットする status の値
-const ADDED_STATUS_VALUE = PropertiesService.getScriptProperties().getProperty('ADDED_STATUS_VALUE');
+const ADDED_STATUS_VALUE = properties.getProperty('ADDED_STATUS_VALUE');
 // 登録するカレンダーの ID
-const CALENDAR_ID = PropertiesService.getScriptProperties().getProperty('CALENDAR_ID');
+const CALENDAR_ID = properties.getProperty('CALENDAR_ID');
 // データの入ったシート名
-const SHEET_NAME = PropertiesService.getScriptProperties().getProperty('SHEET_NAME');
+const SHEET_NAME = properties.getProperty('SHEET_NAME');
 
 /**
  * シートのデータをカレンダーに登録する

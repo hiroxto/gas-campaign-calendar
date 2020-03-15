@@ -3,9 +3,6 @@
     "config:base"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": [
-    "before 10am on the first day of the month"
-  ],
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [

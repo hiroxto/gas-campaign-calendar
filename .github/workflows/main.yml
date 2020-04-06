@@ -23,7 +23,7 @@ jobs:
         env:
           cache-name: cache-node_modules
         with:
-          path: vendor
+          path: node_modules
           key: gas-cc-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             gas-cc-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}

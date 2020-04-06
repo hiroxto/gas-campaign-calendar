@@ -18,6 +18,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-node_modules
+        with:
+          path: node_modules
+          key: gas-cc-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            gas-cc-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+            gas-cc-build-${{ env.cache-name }}-
+            gas-cc-build-
+
       - run: yarn install
 
       - run: yarn run lint

@@ -87,10 +87,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/google-apps-script@1.0.24":
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/@types/google-apps-script/-/google-apps-script-1.0.24.tgz#9324831d2804c0321322e974193cff46cece433d"
-  integrity sha512-TiuV0u1saqXuryQpVbsf3o5KZJlmJrzzV9LIRmRdY9yNKiTiVxVp/1h2ubngBKjRjKa/VUUoA0nqA4gxJ9abJQ==
+"@types/google-apps-script@1.0.27":
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/@types/google-apps-script/-/google-apps-script-1.0.27.tgz#6769f9c492aea1a71bd791da090969efc4e4e2bd"
+  integrity sha512-b8+k3ajAK1j7su0eXsbi0pg5FtyyF8BlCik7jqAnOXhzSNoglYgOmDYdLvl6/NkgLMkpusmfkiVoY0RPRbstHA==
 
 "@types/json-schema@^7.0.3":
   version "7.0.7"

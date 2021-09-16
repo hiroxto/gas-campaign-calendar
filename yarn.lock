@@ -81,7 +81,7 @@
     typescript "^4.3.2"
     wtfnode "^0.8.4"
 
-"@hiroxto/eslint-config@^1.0.0":
+"@hiroxto/eslint-config@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@hiroxto/eslint-config/-/eslint-config-1.0.0.tgz#c430124aae7fd65d45d6598847513b345449f303"
   integrity sha512-zPPcCzsIR6IuQ51sj/5bdfG0SYLNoVSFsAYa/kdf6WtsqiDKyEXPKkxEd3b8Yhjp77zVIYDwLExGC/7kXGawRg==

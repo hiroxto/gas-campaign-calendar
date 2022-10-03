@@ -10,7 +10,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@google/clasp": "2.4.1",
+    "@google/clasp": "2.4.2",
     "@hiroxto/eslint-config": "1.0.1",
     "@types/google-apps-script": "1.0.55",
     "eslint": "7.32.0",

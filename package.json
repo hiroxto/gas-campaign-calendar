@@ -14,6 +14,6 @@
     "@hiroxto/eslint-config": "1.0.1",
     "@types/google-apps-script": "1.0.64",
     "eslint": "7.32.0",
-    "eslint-plugin-googleappsscript": "1.0.4"
+    "eslint-plugin-googleappsscript": "1.0.5"
   }
 }
